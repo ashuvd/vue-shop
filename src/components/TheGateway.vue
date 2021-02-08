@@ -1,5 +1,5 @@
 <template>
-  <div class="lds-ripple"><div></div><div></div></div>
+  <router-view></router-view>
 </template>
 
 <script>

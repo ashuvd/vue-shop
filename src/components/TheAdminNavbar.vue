@@ -1,15 +1,15 @@
 <template>
   <nav class="navbar">
-    <h3>Vue Shop - вход в админку test@test.ru / 123456</h3>
+    <h3>Админка</h3>
     <ul class="navbar-menu">
       <li>
-        <router-link to="/">Магазин</router-link>
+        <router-link to="/admin/products">Инвентарь</router-link>
       </li>
       <li>
-        <router-link to="/cart">Корзина</router-link>
+        <router-link to="/admin/categories">Категории</router-link>
       </li>
       <li>
-        <router-link to="/admin">Админка</router-link>
+        <a href="#" @click.prevent="logout">Выйти</a>
       </li>
     </ul>
   </nav>

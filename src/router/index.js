@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import store from '../store';
 import Shop from '../views/Shop.vue';
+import TheGateway from "@/components/TheGateway";
 
 const routes = [
   {
@@ -9,7 +10,6 @@ const routes = [
     component: Shop,
     meta: {
       layout: 'main',
-      auth: true
     }
   },
   {
@@ -18,7 +18,6 @@ const routes = [
     component: () => import('../views/Product.vue'),
     meta: {
       layout: 'main',
-      auth: true
     }
   },
   {
@@ -27,7 +26,6 @@ const routes = [
     component: () => import('../views/Cart.vue'),
     meta: {
       layout: 'main',
-      auth: true
     }
   },
   {
@@ -37,6 +35,32 @@ const routes = [
     meta: {
       layout: 'auth'
     }
+  },
+  {
+    path: '/admin',
+    redirect: '/admin/products',
+    name: 'Admin',
+    component: TheGateway,
+    children: [
+      {
+        path: 'products',
+        name: 'Products',
+        component: () => import('../views/admin/Products.vue'),
+        meta: {
+          layout: 'admin',
+          auth: true
+        }
+      },
+      {
+        path: 'categories',
+        name: 'Categories',
+        component: () => import('../views/admin/Categories.vue'),
+        meta: {
+          layout: 'admin',
+          auth: true
+        }
+      },
+    ]
   }
 ]
 const router = createRouter({

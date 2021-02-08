@@ -7,6 +7,7 @@ import {computed} from 'vue';
 import {useRoute} from "vue-router";
 import MainLayout from "@/layout/MainLayout";
 import AuthLayout from "@/layout/AuthLayout";
+import AdminLayout from "@/layout/AdminLayout";
 
 export default {
   setup() {
@@ -21,7 +22,8 @@ export default {
   },
   components: {
     MainLayout,
-    AuthLayout
+    AuthLayout,
+    AdminLayout
   }
 }
 </script>

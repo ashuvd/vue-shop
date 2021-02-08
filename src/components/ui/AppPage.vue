@@ -2,7 +2,7 @@
   <div class="breadcrumbs" v-if="back">
     <router-link to="/" class="text-white">Вернуться к списку заявок</router-link>
   </div>
-  <div class="card">
+  <div class="card" :class="{center}">
     <h1 class="card-title">
       {{title}}
       <slot name="header" />
@@ -19,6 +19,10 @@ export default {
       required: true
     },
     back: {
+      type: Boolean,
+      default: false
+    },
+    center: {
       type: Boolean,
       default: false
     }
